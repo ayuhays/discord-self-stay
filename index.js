@@ -12,8 +12,6 @@ const client = new Client();
 
 client.on("ready", async () => {
 	console.log(`✅ ${client.user.username} Started Online`);
-  client.user.setHypeSquad('HOUSE_BRILLIANCE');
-  client.user.setPresence({ activities: [r],});
 	const {joinVoiceChannel} = require('@discordjs/voice');
 	const channel = client.channels.cache.get(process.env.ID); // voice channel's id
 	if (!channel) return console.log("The channel does not exist !");
@@ -27,22 +25,5 @@ client.on("ready", async () => {
 			});
 		  }, 6000)
 		});   
-    
-const r = new RichPresence() 
-	.setApplicationId('1159018870401675276')
-	.setType('PLAYING')
-	.setURL('link')
-	.setState('Set State')
-	.setName('Set Name')
-	.setDetails('Set Details')
-	.setParty({
-		max: 5,
-		current: 3,
-		id: getUUID(),
-	})
-	.setStartTimestamp(Date.now())
-	.setAssetsLargeImage('Assets ID')
-	.setAssetsLargeText('Set Description Assets')
-	.addButton('Custom Button', 'Button Link')
 
 client.login(process.env.TOKEN)
