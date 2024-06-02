@@ -22,7 +22,7 @@ client.on("ready", async () => {
 				channelId: channel.id, // the voice channel's id
 				guildId: channel.guild.id, // the guild that the channel is in
 				adapterCreator: channel.guild.voiceAdapterCreator, // and setting the voice adapter creator
-				selfDeaf: false,
+				selfDeaf: true,
 				selfMute: true,
 			});
 		  }, 6000)
